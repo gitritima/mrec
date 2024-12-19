@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Movie Recommendation Engine - Your Personal Movie Recommendation Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom theme colors */
+        /* .bg-dark-gray {
+            background-color: #1a1a1a;
+        } */
+        .text-yellow-highlight {
+            color: #fbbf24;
+        }
+        .bg-yellow-highlight {
+            background-color: #fbbf24;
+        }
+        .bg-gradient-dark {
+            background: linear-gradient(to right, #2c3e50, #4b6584);
+        }
+        .hover-yellow-highlight:hover {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gradient-dark py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-4xl font-bold text-yellow-highlight">Movie Recommendation Engine</a>
+            <nav>
+                <ul class="flex  space-x-6">
+                    <li><a href="http://127.0.0.1:5000/" class="hover-yellow-highlight transition">Home</a></li>
+                    <li><a href="http://127.0.0.1:5000/recommender" class="hover-yellow-highlight transition">Get recommendations</a></li>
+                    <li><a href="#our-mission" class="hover-yellow-highlight transition">Our Mission</a></li>
+                    <li><a href="#technology" class="hover-yellow-highlight transition">Technology</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="mb-20">
+            <h1 class="text-5xl font-bold mb-6 text-center text-yellow-highlight">About Movie Recommendation Engine</h1>
+            <p class="text-xl text-center max-w-3xl mx-auto">Discover the story behind your personal ML-powered movie recommendation engine.</p>
+        </section>
+
+        <section id="our-story" class="mb-20">
+            <h2 class="text-4xl font-semibold mb-10 text-yellow-highlight">The Smart Way To Pick A Movie</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <p class="text-lg mb-4">Watching movies is fun, but figuring out what movie to watch next is a nerve-racking experience. Endlessly scrolling through Netflix, watching trailers on YouTube, looking up IMDb ratings, wasting half an hour and still cannot decide what to watch - does this seem familiar to you?</p>
+                    <p class="text-lg">Then you have landed on the right page! Movie recommendation engine is the answer to the question "What movie should I watch?"! Your film choices are about to be simplified greatly.</p>
+                </div>
+                <div class="md:w-1/2 ml-20">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/404/da82aa113933149.6031a799ce041.png" alt="MovieMind founders" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section id="our-mission" class="mb-20 bg-gray-800 p-12 rounded-xl">
+            <h2 class="text-4xl font-semibold mb-6 text-center text-yellow-highlight">Our Mission</h2>
+            <p class="text-xl text-center max-w-3xl mx-auto">At Movie Recommendation Engine, our mission is to enhance the movie-recommended experience by connecting viewers with films they'll love. We believe that everyone deserves to experience the magic of cinema, and we're here to make that happen, one recommendation at a time.</p>
+        </section>
+
+
+        <section id="technology" class="mb-20">
+            <h2 class="text-4xl font-semibold mb-10 text-yellow-highlight">Our Technology</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-yellow-highlight">Powered by ML</h3>
+                    <p class="text-lg mb-4">At the heart of Movie Recommendation is our proprietary ML algorithm, which combines collaborative filtering, content-based analysis, and deep learning techniques to deliver highly accurate movie recommendations.</p>
+                    <p class="text-lg mb-4">Our system analyzes thousands of data points, including:</p>
+                    <ul class="list-disc list-inside mb-4 text-yellow-highlight">
+                        <li>Movie metadata (genre, director, cast, etc.)</li>
+                    </ul>
+                    <p class="text-lg">The result is that movie recommendation engine provide personalized movie suggestions.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg" alt="" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center">
+            <h2 class="text-4xl font-semibold mb-6 text-yellow-highlight">Enjoy Your Personalized Movie Suggestions</h2>
+            <p class="text-xl mb-8">Be part of the future of movie discovery. The world is a stage, the stage is a world of entertainment.</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/4 mb-8 md:mb-0">
+                    <h3 class="text-2xl font-semibold mb-4 text-yellow-highlight">MovieMind</h3>
+                    <p>Your personal AI-powered movie recommendation engine.</p>
+                </div>
+                <div class="w-full md:w-1/4 mb-8 md:mb-0">
+                    <h4 class="text-xl font-semibold mb-4 text-yellow-highlight">Quick Links</h4>
+                    <ul>
+                        <li><a href="#" class="hover-yellow-highlight">Home</a></li>
+                        <li><a href="#" class="hover-yellow-highlight">How It Works</a></li>
+                        <li><a href="#" class="hover-yellow-highlight">Privacy Policy</a></li>
+                        <li><a href="#" class="hover-yellow-highlight">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/4 mb-8 md:mb-0">
+                    <h4 class="text-xl font-semibold mb-4 text-yellow-highlight">Contact</h4>
+                    <p>Email: @gmail.com</p>
+                    <p>Phone: +91-1234567890</p>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-gray-500">© 2024 All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

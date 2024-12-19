@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category }} alert-dismissible fade show" role="alert">
+    {% if category == 'success' %}
+    <strong>
+        <i class="fas fa-check-circle"></i>
+    </strong>
+    {% elif category == 'danger' %}
+    <strong>
+        <i class="fas fa-exclamation-triangle"></i>
+    </strong>
+    {% endif %}
+    <strong>{{message|safe}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+<div class=" text-light min-vh-100 d-flex align-items-center justify-content-center" style="background-image:url('https://getwallpapers.com/wallpaper/full/1/b/d/829640-gorgerous-movie-backgrounds-1920x1080-ipad-pro.jpg') ;">
+    <div class="container py-5">
+        <h2 class="text-center text-uppercase text-white mb-4">Movie Recommendation Engine</h2>
+        <div class="row justify-content-center">
+            <!-- Movie Recommendation Form -->
+            <div class="col-md-6 mb-4">
+                <form action="/results" class="card bg-dark border-secondary text-light shadow-lg" method="post">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">Get Movie Recommendations</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" name="by" value="name">
+                        <div class="d-flex">
+                            <div class="mb-3 flex-grow-1 me-2">
+                                <label for="name" class="form-label text-light">Movie</label>
+                                <input type="text" class="form-control form-control-lg bg-dark text-light border-secondary" 
+                                       name="name" id="name" placeholder="Raja Hindustani..." />
+                            </div>
+                            <div class="mb-3">
+                                <label for="count" class="form-label text-light"># of Results</label>
+                                <input type="number" class="form-control form-control-lg bg-dark text-light border-secondary" 
+                                       name="count" id="count" min="5" max="25" placeholder="5" value="5" />
+                            </div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-lg btn-outline-primary w-100">Find Similar Movies</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+                        <!-- Keyword Search Form -->
+                        <div class="col-md-6 mb-4">
+                            <form action="/results" class="card bg-dark border-secondary text-light shadow-lg" method="post">
+                                <div class="card-header bg-secondary text-white">
+                                    <h5 class="card-title mb-0">Search by Keyword</h5>
+                                </div>
+                                <div class="card-body">
+                                    <input type="hidden" name="by" value="word">
+                                    <div class="d-flex">
+                                        <div class="mb-3 flex-grow-1 me-2">
+                                            <label for="keyword" class="form-label text-light">Keyword</label>
+                                            <input type="text" class="form-control form-control-lg bg-dark text-light border-secondary" 
+                                                   name="name" id="keyword" placeholder="Kung Fu" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="count" class="form-label text-light"># of Results</label>
+                                            <input type="number" class="form-control form-control-lg bg-dark text-light border-secondary" 
+                                                   name="count" id="count" min="5" max="25" placeholder="5" value="5" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 text-center">
+                                        <button class="btn btn-lg btn-outline-success w-100">Find with Keywords</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+            <!-- print list of all movies_name -->
+            <div class="col-md-6 mb-4">
+                <div class="card bg-dark border-secondary text-light shadow-lg">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">Sample Names To Search</h5> 
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="movie-select" class="form-label text-light">Sample Data</label>
+                            <select class="form-select bg-dark text-light border-secondary" id="movie-select" name="movie">
+                                {% for movie in movies_name %}
+                                <option value="{{ movie }}">{{ movie }}</option>
+                                {% endfor %}
+                            </select>
+                            <select class="form-select bg-dark text-light border-secondary" id="movie-select" name="movie">
+                                {% for genre in genre_name %}
+                                <option value="{{ genre }}">{{ genre }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block css %}
+<style>
+    body {
+        background-color: #000;
+    }
+    .form-label {
+        font-weight: bold;
+    }
+    .btn {
+        font-size: 1.1rem;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+    .btn-outline-success:hover {
+        background-color: #28a745;
+        color: #fff;
+    }
+    .card {
+        border-radius: 0.5rem;
+    }
+    .card-header {
+        padding: 0.75rem 1.25rem;
+    }
+    .card-body {
+        padding: 2rem 1.5rem;
+    }
+    .form-control {
+        background-color: #212529;
+        color: #fff;
+        border-radius: 0.25rem;
+    }
+    .form-control:focus {
+        border-color: #495057;
+        box-shadow: none;
+    }
+    .container-fluid {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+{% endblock %}
